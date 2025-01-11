@@ -68,3 +68,14 @@
                  CTRL + F2 -> Syntax Check
                  CTRL + F3 -> Activate
                  CTRL + SHIFT + F10 -> To check the contents of the table.
+
+ 
+                                        Topic : Primary-Foreign Key Relationship
+
+Primary Key of one table act as a Foreign key in another table.
+
+( Data/Record/Row/Tuple will be always in the primary key table, It may or may not in the foreign key table)
+
+Pre-requisite - Tables should have a common column/field.
+
+Cardinality -> Number of records in key table, correponds to how many number of records in to secondary/foreign key table.   
