@@ -78,4 +78,31 @@ Primary Key of one table act as a Foreign key in another table.
 
 Pre-requisite - Tables should have a common column/field.
 
-Cardinality -> Number of records in key table, correponds to how many number of records in to secondary/foreign key table.   
+Cardinality -> Number of records in key table, correponds to how many number of records in to secondary/foreign key table. 
+
+Topic : Initial Values Check box in Table
+
+1) We can select the checkbox Initial values for table fields, then the type dependent NOT NULL value be 
+       assigned to that field and the flag for NOT NULL is set to true on database.
+     
+      Path to check : Utilities->Databaseobject->Display) - Refer column NOT NULL and Default.     
+ 
+2)Many databases, will simply initialize the value of a field as NOT NULL even if we are not selecting this checkbox.
+    
+    Scenario: Suppose we added a new column NEW_1 to table ZTORDH_78 and for NEW_1 , the NOT NULL flag is true.
+    First Query will not return any result and the second query will return the result.
+    DATA : lt_ordh_78 TYPE TABLE OF ZTORDH_78.
+            SELECT * FROM  ZTORDH_78
+            INTO TABLE lt_ordh_78
+            WHERE NEW_1 IS NULL.    "No Output
+
+    DATA : lt_ordh_78 TYPE TABLE OF ZTORDH_78.
+            SELECT * FROM  ZTORDH_78
+            INTO TABLE lt_ordh_78
+            WHERE NEW_1 = ' '.       "  Output
+
+    DATA : lt_ordh_78 TYPE TABLE OF ZTORDH_78.
+            SELECT * FROM  ZTORDH_78
+            INTO TABLE lt_ordh_78
+            WHERE NEW_1 IS NOT NULL.    "  Output
+
