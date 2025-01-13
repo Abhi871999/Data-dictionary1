@@ -106,3 +106,15 @@ Topic : Initial Values Check box in Table
             INTO TABLE lt_ordh_78
             WHERE NEW_1 IS NOT NULL.    "  Output
 
+  Topic : Types of SAP Database tables
+
+1) Transparent table - There is 1:1 relationship between the ABAP dictionary and the database.( One table in ABAP dictionary corresponds to one table in database)
+2) Pooled table - There is N:1 relationship between the ABAP dictionary and the database.( Many tables in ABAP dictionary corresponds to one table in database)
+3) Cluster table - There is N:1 relationship between the ABAP dictionary and the database.( Many tables in ABAP dictionary corresponds to one table in database )
+
+Pooled -> Primary-foreign key relationship is not required.
+Cluster -> Primary-foreign key relationship is mandatory.
+
+Structure of a Pooled table at the database layer - Tabname Varkey Dataln vardata
+Structure of a cluster table at the database layer - Key Pageno Vardata           
+
