@@ -116,5 +116,55 @@ Pooled -> Primary-foreign key relationship is not required.
 Cluster -> Primary-foreign key relationship is mandatory.
 
 Structure of a Pooled table at the database layer - Tabname Varkey Dataln vardata
-Structure of a cluster table at the database layer - Key Pageno Vardata           
+Structure of a cluster table at the database layer - Key Pageno Vardata       
+
+Topic : Table Buffering
+
+Buffer is a temperory storage on the application layer. 
+It improves the performance when accessing the data records contained in the table. 
+
+Buffering Options:
+
+1) Buffering not allowed-> Table buffering is not performed for the table.
+2) Buffering switched on-> Table buffering is performed for the table.
+3) Buffering allowed, but switched off-> Buffer is allowed but it is switched OFF 
+                                        and can be switched ON anytime according to the requirement of customer.
+ 
+Types of Buffering:
+
+1) Single Record buffering -> Single Record will be in the buffer.
+
+When to Use Single Record Buffering ->
+
+Single-record buffering should be used for tables where only a few records are accessed by specifying the complete key. 
+
+Advantage -> It will ocucupy less memory on the application layer.
+Disadvantage -> Number of iterations will not be reduced between Application layer and database layer, 
+                if we are not fetching the same record.
+
+
+2) Full Buffering -> Full table will be in the buffer.
+
+When to Use Full Record Buffering->
+
+When you decide to fully buffer a table, you must take into account the size of the table,  
+Tables that are best suited to full buffering are frequently accessed and rarely changed.
+
+A table which stores transaction data should not be opted for Full buffering.
+
+Advantage -> Number of iterations between Application and database layer will  be significantly reduced.
+Disadvantage -> It will occupy more memory on the application Layer.
+
+
+3) Generic area buffering -> All Records matches the generic key are loaded in the buffer.
+
+
+When To Use Generic Buffering:
+
+For Generic areas( Language Dependent tables)
+
+Imp Point : The numbers of key field for a generic area buffering is less than the primary keys of the table.
+
+Transaction Code to check the Buffer -> AL12( Path : Monitor->Buffers->Table Buffer->
+
 
