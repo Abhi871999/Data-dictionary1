@@ -1,7 +1,5 @@
 # Data-dictionary1
- Data Dictionary                         
-
-
+                       
 1) Data Dictionary is also called ABAP Dictionary or DDIC.
 
    SE11 -> Transaction code for Data Dictionary or ABAP Dictionary.
