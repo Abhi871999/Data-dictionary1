@@ -165,4 +165,26 @@ Imp Point : The numbers of key field for a generic area buffering is less than t
 
 Transaction Code to check the Buffer -> AL12( Path : Monitor->Buffers->Table Buffer->
 
+Topic : Structures
+
+Structures ->  Is a collection of fields/columns of different data type or similar data type.
+
+ZEMP -> EID -> N(10)
+        ENAME ->C(40)
+
+ZEMP1 ->EID -> N(10)
+        ESAL ->N(10)
+
+Difference between table & Structure -> Table has data , Structure does not have any data.
+
+
+Include  -> 1) It is a reusebale Structure.
+            2) We can insert the include structure at any point.
+            3) It is applicable to customer specific tables, It is not applicable to SAP specific tables.
+
+
+Append  -> 1) It is not a reuseable structure.
+           2) It always inserts at the last.
+           3) It is applicable to both customer specific tables and SAP tables.
+
 
